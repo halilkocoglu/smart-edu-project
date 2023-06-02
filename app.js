@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const pageRoute = require("./routes/pageRoute");
 const courseRoute = require("./routes/courseRoute");
 const categoryRoute = require("./routes/categoryRoute");
+const authRoute = require("./routes/authRoute");
 
 dotenv.config();
 const app = express();
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", pageRoute);
 app.use("/courses", courseRoute);
 app.use("/categories", categoryRoute);
+app.use("/auth", authRoute);
 
 const port = process.env.PORT;
 app.listen(port, () => {
