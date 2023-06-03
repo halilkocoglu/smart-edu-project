@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 exports.getIndexPage = (req, res) => {
-  console.log(req.session.userID);
+  // console.log(req.session.userID);
   res.status(200).render("index", { pageName: "index" });
 };
 

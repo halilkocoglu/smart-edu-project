@@ -55,7 +55,7 @@ exports.getDashboardPage = async (req, res) => {
   const categories = await Category.find();
   const courses = await Course.find({ user: req.session.userID });
   const users = await User.find();
-  console.log(users.countDocument);
+  // console.log(users.countDocument);
   res.status(200).render("dashboard", {
     pageName: "dashboard",
     user,
