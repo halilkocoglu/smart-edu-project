@@ -64,3 +64,17 @@ exports.getDashboardPage = async (req, res) => {
     users,
   });
 };
+
+exports.deleteUser = async (req, res) => {
+  try {
+    await User.findOneAndRemove({ _id: req.params.id });
+    await Course.deleteMany({ user: req.params.id });
+
+    res.status(200).redirect("/auth/dashboard");
+  } catch (error) {
+    res.status(400).json({
+      status: "failure",
+      error,
+    });
+  }
+};

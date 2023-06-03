@@ -127,6 +127,7 @@ exports.deleteCourse = async (req, res) => {
     });
   }
 };
+
 exports.updateCourse = async (req, res) => {
   try {
     const course = await Course.findOne({ slug: req.params.slug });
